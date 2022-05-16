@@ -101,7 +101,7 @@ func getTargetInfo(rb *reps.RepoBucket, js string) interface{} {
 
 	t.Users, _ = c.GetUsers()
 	su, err := c.GetStreamUri()
-	if err == nil {
+	if err == nil && su != nil {
 		t.StreamUri = su.URI
 	}
 
