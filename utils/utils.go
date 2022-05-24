@@ -24,16 +24,23 @@ var sep = "_"
 func TimeToString(time time.Time, includeNanoSec bool) string {
 	arr := make([]string, 0)
 	arr = append(arr, strconv.Itoa(time.Year()))
-	arr = append(arr, strconv.Itoa(int(time.Month())))
-	arr = append(arr, strconv.Itoa(time.Day()))
-	arr = append(arr, strconv.Itoa(time.Hour()))
-	arr = append(arr, strconv.Itoa(time.Minute()))
-	arr = append(arr, strconv.Itoa(time.Second()))
+	arr = append(arr, fixZero(int(time.Month())))
+	arr = append(arr, fixZero(time.Day()))
+	arr = append(arr, fixZero(time.Hour()))
+	arr = append(arr, fixZero(time.Minute()))
+	arr = append(arr, fixZero(time.Second()))
 	if includeNanoSec {
-		arr = append(arr, strconv.Itoa(time.Nanosecond()))
+		arr = append(arr, fixZero(time.Nanosecond()))
 	}
 
 	return strings.Join(arr, sep)
+}
+
+func fixZero(val int) string {
+	if val < 9 {
+		return "0" + strconv.Itoa(val)
+	}
+	return strconv.Itoa(val)
 }
 
 func RemoveContainers(dm *hack.DockerManager) {
