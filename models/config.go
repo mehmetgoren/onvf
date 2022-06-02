@@ -53,4 +53,10 @@ type Config struct {
 		FaceRecogProbThreshold  float32 `json:"face_recog_prob_threshold"`
 		PlateRecogInstanceCount int     `json:"plate_recog_instance_count"`
 	} `json:"ai"`
+	Ui struct {
+		GsWidth                int     `json:"gs_width"`
+		GsHeight               int     `json:"gs_height"`
+		BoosterInterval        float32 `json:"booster_interval"`
+		SeekToLiveEdgeInternal int     `json:"seek_to_live_edge_internal"`
+	} `json:"ui"`
 }
