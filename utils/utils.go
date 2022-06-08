@@ -37,7 +37,7 @@ func TimeToString(time time.Time, includeNanoSec bool) string {
 }
 
 func fixZero(val int) string {
-	if val < 9 {
+	if val < 10 {
 		return "0" + strconv.Itoa(val)
 	}
 	return strconv.Itoa(val)
