@@ -36,7 +36,6 @@ func removeContainers(dm *hack.DockerManager) {
 }
 
 func test() {
-
 	//rb := reps.RepoBucket{}
 	//rb.Init()
 	//
