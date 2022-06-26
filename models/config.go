@@ -2,9 +2,8 @@ package models
 
 type Config struct {
 	Device struct {
-		DeviceName     string `json:"device_name"`
-		DeviceType     int    `json:"device_type"`
-		DeviceServices []int  `json:"device_services"`
+		DeviceName string `json:"device_name"`
+		DeviceType int    `json:"device_type"`
 	} `json:"device"`
 	Redis struct {
 		Host string `json:"host"`
@@ -27,10 +26,10 @@ type Config struct {
 		SsimThreshold      float64 `json:"ssim_threshold"`
 	} `json:"once_detector"`
 	SourceReader struct {
-		Fps        int `json:"fps"`
-		BufferSize int `json:"buffer_size"`
-		MaxRetry   int `json:"max_retry"`
-		MaxRetryIn int `json:"max_retry_in"`
+		ResizeImg  bool `json:"resize_img"`
+		BufferSize int  `json:"buffer_size"`
+		MaxRetry   int  `json:"max_retry"`
+		MaxRetryIn int  `json:"max_retry_in"`
 	} `json:"source_reader"`
 	General struct {
 		RootFolderPath    string `json:"root_folder_path"`
