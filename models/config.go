@@ -5,10 +5,6 @@ type Config struct {
 		DeviceName string `json:"device_name"`
 		DeviceType int    `json:"device_type"`
 	} `json:"device"`
-	Redis struct {
-		Host string `json:"host"`
-		Port int    `json:"port"`
-	} `json:"redis"`
 	Jetson struct {
 		ModelName string `json:"model_name"`
 	} `json:"jetson"`
