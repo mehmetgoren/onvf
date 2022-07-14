@@ -31,6 +31,10 @@ type Config struct {
 		RootFolderPath    string `json:"root_folder_path"`
 		HeartbeatInterval int    `json:"heartbeat_interval"`
 	} `json:"general"`
+	Db struct {
+		Type             int    `json:"type"` // 0 is SQLite, 1 is MongoDB
+		ConnectionString string `json:"connection_string"`
+	} `json:"db"`
 	FFmpeg struct {
 		UseDoubleQuotesForPath         bool    `json:"use_double_quotes_for_path"`
 		MaxOperationRetryCount         int     `json:"max_operation_retry_count"`
