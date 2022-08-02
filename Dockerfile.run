@@ -1,0 +1,2 @@
+docker build -t onvf:v1.0.0 .
+docker run -it --rm --name onvf-instance --net host -v /var/run/docker.sock:/var/run/docker.sock onvf:v1.0.0
