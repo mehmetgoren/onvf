@@ -29,6 +29,7 @@ type ServiceModel struct {
 	Ram             string       `json:"ram" redis:"ram"`
 	Pid             int          `json:"pid" redis:"pid"`
 	InstanceType    InstanceType `json:"instance_type" redis:"instance_type"`
+	InstanceName    string       `json:"instance_name" redis:"instance_name"`
 	CreatedAt       string       `json:"created_at" redis:"created_at"`
 	Heartbeat       string       `json:"heartbeat" redis:"heartbeat"`
 }
@@ -57,6 +58,7 @@ func (r *ServiceRepository) Add(serviceName string) (int64, error) {
 		Ram:             "unknown",
 		Pid:             os.Getpid(),
 		InstanceType:    container,
+		InstanceName:    "onvf-instance",
 		CreatedAt:       utils.TimeToString(now, true),
 		Heartbeat:       "",
 	}
