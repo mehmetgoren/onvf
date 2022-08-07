@@ -23,6 +23,41 @@ type RedisConnectionInfo struct {
 	initialized bool
 }
 
+func getRedisConnInfo() (string, int) {
+	var err error
+	host, port := "", 0
+	h, p := flag.String("redis-host", "", "Redis Host Address"), flag.String("redis-port", "", "Redis Port Number")
+	flag.Parse()
+
+	eh := os.Getenv("REDIS_HOST")
+	if len(eh) > 0 {
+		host = eh
+	} else if len(*h) > 0 {
+		host = *h
+	} else {
+		host = "127.0.0.1"
+	}
+
+	ep := os.Getenv("REDIS_PORT")
+	if len(ep) > 0 {
+		port, err = strconv.Atoi(ep)
+		if err != nil {
+			port = 6379
+			log.Println("An error occurred while converting Redis port value from environment variable: " + err.Error())
+		}
+	} else if len(*p) > 0 {
+		port, err = strconv.Atoi(*p)
+		if err != nil {
+			port = 6379
+			log.Println("An error occurred while converting Redis port value from arguments :" + err.Error())
+		}
+	} else {
+		port = 6379
+	}
+
+	return host, port
+}
+
 func (r *RedisConnectionInfo) init() {
 	if r.initialized {
 		return
@@ -35,32 +70,9 @@ func (r *RedisConnectionInfo) init() {
 		return
 	}
 
-	host, port := "127.0.0.1", 6379
-	h, p := flag.String("host", "", "Redis Host Address"), flag.String("port", "", "Redis Port Number")
-	flag.Parse()
-
-	if len(*h) > 0 {
-		host = *h
-	} else {
-		host := os.Getenv("REDIS_HOST")
-		if len(host) == 0 {
-			host = "127.0.0.1"
-		}
-	}
+	host, port := getRedisConnInfo()
 	r.Host = host
 	log.Println("Redis host: ", host)
-
-	portStr := ""
-	if len(*p) > 0 {
-		portStr = *p
-	} else {
-		portStr = os.Getenv("REDIS_PORT")
-	}
-	port, err := strconv.Atoi(portStr)
-	if err != nil {
-		port = 6379
-		log.Println("An error occurred while converting Redis port value:" + err.Error())
-	}
 	r.Port = port
 	log.Println("Redis port: ", port)
 	r.initialized = true
