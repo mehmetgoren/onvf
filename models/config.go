@@ -58,4 +58,8 @@ type Config struct {
 		BoosterInterval        float32 `json:"booster_interval"`
 		SeekToLiveEdgeInternal int     `json:"seek_to_live_edge_internal"`
 	} `json:"ui"`
+	Jobs struct {
+		MacIpMatchingEnabled  bool `json:"mac_ip_matching_enabled"`
+		MacIpMatchingInterval int  `json:"mac_ip_matching_interval"`
+	} `json:"jobs"`
 }
