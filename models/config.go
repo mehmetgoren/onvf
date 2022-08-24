@@ -62,4 +62,15 @@ type Config struct {
 		MacIpMatchingEnabled  bool `json:"mac_ip_matching_enabled"`
 		MacIpMatchingInterval int  `json:"mac_ip_matching_interval"`
 	} `json:"jobs"`
+	DeepStack struct {
+		ServerUrl       string  `json:"server_url"`
+		ServerPort      int     `json:"server_port"`
+		PerformanceMode int     `json:"performance_mode"`
+		ApiKey          string  `json:"api_key"`
+		OdEnabled       bool    `json:"od_enabled"`
+		OdThreshold     float32 `json:"od_threshold"`
+		FrEnabled       bool    `json:"fr_enabled"`
+		FrThreshold     float32 `json:"fr_threshold"`
+		DockerType      int     `json:"docker_type"`
+	} `json:"deep_stack"`
 }
