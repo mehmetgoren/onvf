@@ -73,4 +73,9 @@ type Config struct {
 		FrThreshold     float32 `json:"fr_threshold"`
 		DockerType      int     `json:"docker_type"`
 	} `json:"deep_stack"`
+	Archive struct {
+		LimitPercent int    `json:"limit_percent"`
+		ActionType   int    `json:"action_type"`
+		MoveLocation string `json:"move_location"`
+	} `json:"archive"`
 }
