@@ -16,11 +16,6 @@ type Config struct {
 		ModelName   string `json:"model_name"`
 		CacheFolder string `json:"cache_folder"`
 	} `json:"tensorflow"`
-	OnceDetector struct {
-		ImagehashThreshold int     `json:"imagehash_threshold"`
-		PsnrThreshold      float64 `json:"psnr_threshold"`
-		SsimThreshold      float64 `json:"ssim_threshold"`
-	} `json:"once_detector"`
 	SourceReader struct {
 		ResizeImg  bool `json:"resize_img"`
 		BufferSize int  `json:"buffer_size"`
@@ -78,4 +73,7 @@ type Config struct {
 		ActionType   int    `json:"action_type"`
 		MoveLocation string `json:"move_location"`
 	} `json:"archive"`
+	Snapshot struct {
+		ProcessCount int `json:"process_count"`
+	} `json:"snapshot"`
 }
