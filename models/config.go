@@ -54,8 +54,10 @@ type Config struct {
 		SeekToLiveEdgeInternal int     `json:"seek_to_live_edge_internal"`
 	} `json:"ui"`
 	Jobs struct {
-		MacIpMatchingEnabled  bool `json:"mac_ip_matching_enabled"`
-		MacIpMatchingInterval int  `json:"mac_ip_matching_interval"`
+		MacIpMatchingEnabled       bool `json:"mac_ip_matching_enabled"`
+		MacIpMatchingInterval      int  `json:"mac_ip_matching_interval"`
+		BlackScreenMonitorEnabled  bool `json:"black_screen_monitor_enabled"`
+		BlackScreenMonitorInterval int  `json:"black_screen_monitor_interval"`
 	} `json:"jobs"`
 	DeepStack struct {
 		ServerUrl       string  `json:"server_url"`
