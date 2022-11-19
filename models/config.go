@@ -39,6 +39,8 @@ type Config struct {
 		StartTaskWaitForInterval       float32 `json:"start_task_wait_for_interval"`
 		RecordConcatLimit              int     `json:"record_concat_limit"`
 		RecordVideoFileIndexerInterval int     `json:"record_video_file_indexer_interval"`
+		RtmpServerPortStart            int     `json:"rtmp_server_port_start"`
+		RtmpServerPortEnd              int     `json:"rtmp_server_port_end"`
 	} `json:"ffmpeg"`
 	Ai struct {
 		Overlay                 bool    `json:"overlay"`
