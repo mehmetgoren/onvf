@@ -23,8 +23,8 @@ type Config struct {
 		MaxRetryIn int  `json:"max_retry_in"`
 	} `json:"source_reader"`
 	General struct {
-		RootFolderPath    string `json:"root_folder_path"`
-		HeartbeatInterval int    `json:"heartbeat_interval"`
+		DirPaths          []string `json:"dir_paths"`
+		HeartbeatInterval int      `json:"heartbeat_interval"`
 	} `json:"general"`
 	Db struct {
 		Type             int    `json:"type"` // 0 is SQLite, 1 is MongoDB
@@ -43,7 +43,6 @@ type Config struct {
 		RtmpServerPortEnd              int     `json:"rtmp_server_port_end"`
 	} `json:"ffmpeg"`
 	Ai struct {
-		Overlay                 bool    `json:"overlay"`
 		VideoClipDuration       int     `json:"video_clip_duration"`
 		FaceRecogMtcnnThreshold float32 `json:"face_recog_mtcnn_threshold"`
 		FaceRecogProbThreshold  float32 `json:"face_recog_prob_threshold"`
@@ -78,6 +77,10 @@ type Config struct {
 		MoveLocation string `json:"move_location"`
 	} `json:"archive"`
 	Snapshot struct {
-		ProcessCount int `json:"process_count"`
+		ProcessCount     int  `json:"process_count"`
+		Overlay          bool `json:"overlay"`
+		MetaColorEnabled bool `json:"meta_color_enabled"`
+		MetaColorCount   int  `json:"meta_color_count"`
+		MetaColorQuality int  `json:"meta_color_quality"`
 	} `json:"snapshot"`
 }
