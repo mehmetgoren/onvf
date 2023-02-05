@@ -83,4 +83,11 @@ type Config struct {
 		MetaColorCount   int  `json:"meta_color_count"`
 		MetaColorQuality int  `json:"meta_color_quality"`
 	} `json:"snapshot"`
+	Hub struct {
+		Enabled       bool   `json:"enabled"`
+		Address       string `json:"address"`
+		Token         string `json:"token"`
+		WebAppAddress string `json:"web_app_address"`
+		MaxRetry      int    `json:"max_retry"`
+	} `json:"hub"`
 }

@@ -6,5 +6,5 @@ gokalpgoren
         docker build -t gokalpgoren/onvf:v1.0.0-amd64 .
         docker run -it --restart unless-stopped --name onvf-instance --net host -e TZ=Europe/Istanbul -v /var/run/docker.sock:/var/run/docker.sock gokalpgoren/onvf:v1.0.0-amd64
     raspi4:
-        docker build -t gokalpgoren/onvf:v1.0.0-raspi4 .
-        docker run -it --restart unless-stopped --name onvf-instance --net host -e TZ=Europe/Istanbul -v /var/run/docker.sock:/var/run/docker.sock gokalpgoren/onvf:v1.0.0-raspi4
+        docker build -t gokalpgoren/onvf:v1.0.0-arm64v8 .
+        docker run -it --restart unless-stopped --name onvf-instance --net host -e TZ=Europe/Istanbul -v /var/run/docker.sock:/var/run/docker.sock gokalpgoren/onvf:v1.0.0-arm64v8
