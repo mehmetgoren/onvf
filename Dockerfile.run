@@ -1,10 +1,10 @@
-docker build -t onvf:v1.0.0 .
-docker run -it --restart unless-stopped --name onvf-instance --net host -e TZ=Europe/Istanbul -v /var/run/docker.sock:/var/run/docker.sock onvf:v1.0.0
+docker build -t onvf:v1.0.1 .
+docker run -it --restart unless-stopped --name onvf-instance --net host -e TZ=Europe/Istanbul -v /var/run/docker.sock:/var/run/docker.sock onvf:v1.0.1
 
 gokalpgoren
     amd64:
-        docker build -t gokalpgoren/onvf:v1.0.0-amd64 .
-        docker run -it --restart unless-stopped --name onvf-instance --net host -e TZ=Europe/Istanbul -v /var/run/docker.sock:/var/run/docker.sock gokalpgoren/onvf:v1.0.0-amd64
+        docker build -t gokalpgoren/onvf:v1.0.1-amd64 .
+        docker run -it --restart unless-stopped --name onvf-instance --net host -e TZ=Europe/Istanbul -v /var/run/docker.sock:/var/run/docker.sock gokalpgoren/onvf:v1.0.1-amd64
     raspi4:
-        docker build -t gokalpgoren/onvf:v1.0.0-arm64v8 .
-        docker run -it --restart unless-stopped --name onvf-instance --net host -e TZ=Europe/Istanbul -v /var/run/docker.sock:/var/run/docker.sock gokalpgoren/onvf:v1.0.0-arm64v8
+        docker build -t gokalpgoren/onvf:v1.0.1-arm64v8 .
+        docker run -it --restart unless-stopped --name onvf-instance --net host -e TZ=Europe/Istanbul -v /var/run/docker.sock:/var/run/docker.sock gokalpgoren/onvf:v1.0.1-arm64v8
