@@ -16,6 +16,10 @@ type Config struct {
 		ModelName   string `json:"model_name"`
 		CacheFolder string `json:"cache_folder"`
 	} `json:"tensorflow"`
+	CoralTPUConfig struct {
+		ModelPath  string `json:"model_path"`
+		LabelsPath string `json:"labels_path"`
+	} `json:"coral"`
 	SourceReader struct {
 		ResizeImg  bool `json:"resize_img"`
 		BufferSize int  `json:"buffer_size"`
